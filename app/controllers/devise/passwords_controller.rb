@@ -41,7 +41,7 @@ class Devise::PasswordsController < DeviseController
         respond_with resource, location: after_resetting_password_path_for(resource)
       else
         set_flash_message(:notice, :updated_not_active) if is_flashing_format?
-        respond_with resource, location: new_session_path(resource_name)
+        respond_with resource, location: after_resetting_password_path_for(resource)
       end
     else
       respond_with resource
